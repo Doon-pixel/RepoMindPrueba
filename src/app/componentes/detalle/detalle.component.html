@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div>
+    detalles
+</div>
+
+<div class="container">
+    <div class="row">
+        
+            <div class=" col-12 col-md-6 imagenItem">
+                <img [src]=" peticion.HostLocal + '/Products/'+datos._id+'.png'">
+            </div>
+            
+            <div class=" col-12 col-md-6 datosItem">
+                <h3>{{datos.nombre}}</h3>
+                <p>{{datos.descripcion}}</p>
+                <p>{{datos.datosTecnicos}}</p>
+                <div>Disponible: {{datos.cantidad}}</div>
+                
+            </div>   
+    </div>
+
+    <div class="row">
+        <section id="descripcion">
+            <h3>Descripción</h3>
+            {{datos.descripcion}}
+        </section>
+    </div>
+
+    <div class="row">
+        <section id="datosTecnicos">
+            <h3>Datos Técnicos</h3>
+            {{datos.datosTecnicos}}
+        </section>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary"> Comprar</button>
+    </div>
+
+</div>
+
+<app-footer></app-footer>

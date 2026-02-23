@@ -1,0 +1,117 @@
+<app-menulateral></app-menulateral>
+<div id="ventanaFlotante">
+    <div class="titulo">
+        Productos
+    </div>
+
+    <div class="areaTrabajo">
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+            
+            <th scope="col">Nombre</th>
+            <th scope="col">Código</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Estado</th>
+            <th>Imagen</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of datos">
+                <tr  (click)="ListarId(item._id)">
+                    <td>{{item.nombre}}</td>
+                    <td>{{item.codigo}}</td>
+                    <td>{{item.precio | currency}}</td>
+                    <td>{{item.cantidad | number}}</td>
+                    <td>{{item.estado}}</td>
+                    <td><img class="imagenTabla" [src]=" peticion.HostLocal + '/Products/'+item._id+'.png?v='+random " onerror="this.src='assets/default.png';"></td>
+                </tr>
+            </ng-container>           
+        </tbody>
+        </table>
+
+
+    </div>
+
+    <div class="botonNuevo" (click)="nuevo()">
+        <i class="fas fa-plus-circle"></i>  
+    </div>
+
+
+</div>
+
+
+
+<div class="modal fade" id="misDatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Roles</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <label for="imagenMarca" style="width: 100%;">
+            <img class="imagenItem" [src]=" peticion.HostLocal + '/Products/'+idSeleccionado+'.png?v='+random " onerror="this.src='assets/default.png';">
+            <input type="file" id="imagenMarca"  (change)="onFileSelected($event)" style="display: none;">
+        </label><br>
+
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control form-control-sm" id="nombre" [(ngModel)]="nombre" >
+            </div>
+
+            <div class="form-group">
+                <label for="codigo">Código</label>
+                <input type="text" class="form-control form-control-sm" id="codigo" [(ngModel)]="codigo" >
+            </div>
+
+            <div class="row" >
+                <div class="form-group col-12 col-md-6">
+                    <label for="precio">Precio</label>
+                    <input type="text" class="form-control form-control-sm" id="precio" [(ngModel)]="precio" >
+                </div>
+    
+                <div class="form-group col-12 col-md-6" >
+                    <label for="cantidad">Cantidad Disponible</label>
+                    <input type="text" class="form-control form-control-sm" id="cantidad" [(ngModel)]="cantidad" >
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="descripcion">Descripcion</label>
+                <textarea class="form-control" id="descripcion" rows="3" [(ngModel)]="descripcion"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="datosTecnicos">Datos Técnicos</label>
+                <textarea class="form-control" id="datosTecnicos" rows="3" [(ngModel)]="datosTecnicos"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <select class="form-control" id="estado" [(ngModel)]="estado">
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>
+                    
+                </select>
+            </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="Eliminar()" *ngIf="idSeleccionado != '' " >Eliminar</button>
+        <button type="button" class="btn btn-primary" (click)="Actualizar() " *ngIf="idSeleccionado != '' ">Actualizar</button>
+        <button type="button" class="btn btn-primary" (click)="Guardar()" *ngIf="idSeleccionado == '' ">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

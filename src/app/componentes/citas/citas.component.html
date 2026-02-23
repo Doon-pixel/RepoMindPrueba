@@ -1,0 +1,52 @@
+<app-header></app-header>
+<div class="container">
+        <h1 class="tituloHome">Citas</h1>
+    </div>
+
+    <div class="container contenedorHome">
+        <div class="row">
+            <div class="col-12 ">
+                <div>
+                    <h3 >Sigue los pasos para reservar con nosotros:</h3>
+                    <ol>
+                        <li>Haz clic en “Agendar cita” para comenzar.</li>
+                        <li>Elige el servicio o tipo de cita que necesitas.</li>
+                        <li>Busca el horario que más se acomode a ti</li>
+                        <li>Selecciona la fecha y hora disponibles</li>
+                        <li>Confirma los datos y haz clic en “Reservar”</li>
+                    </ol>
+                    <p> Recuerda contar con dispoinibilidad de tiempo antes de reservar</p>
+                </div>               
+            </div>            
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="calendar">
+                    <!-- Google Calendar Appointment Scheduling begin -->
+                        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+                        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+                        <script>
+                        (function() {
+                        var target = document.currentScript;
+                        window.addEventListener('load', function() {
+                            calendar.schedulingButton.load({
+                            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3hQP_9HFFWKHwG_IMqaZ1g6dHz2rBnlhaYezbosFde6mrAd0Ww0ixQJayqBJ-ysWNoMPq5EIZ2?gv=true',
+                            color: '#598b7d',
+                            label: 'Agendar cita',
+                            target,
+                            });
+                        });
+                        })();
+                        
+                        </script>
+                    <!-- end Google Calendar Appointment Scheduling -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+<app-footer></app-footer>

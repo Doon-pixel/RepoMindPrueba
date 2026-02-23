@@ -1,0 +1,87 @@
+<p>permisos works!</p>
+<app-menulateral></app-menulateral>
+<div id="ventanaFlotante">
+    <div class="titulo">
+        Permisos 
+    </div>
+
+    <div class="areaTrabajo">
+
+    
+    
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Rol</th>
+            </tr>
+            <tr>
+                <td><input type="text" [(ngModel)]="nombrePermiso" placeholder="Nombre permiso"></td>
+                <td><input type="text" [(ngModel)]="criterio" placeholder="Rol"></td>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <ng-container *ngFor="let item of datos | filtrarArray: 'nombreRol':criterio | filtrarArray: 'nombre': nombrePermiso  ">
+                <tr  (click)="ListarId(item._id)">
+                <td>{{item.nombre}}</td>
+                <td>{{item.nombreRol}}</td>
+                </tr>
+            </ng-container>           
+        </tbody>
+        </table>
+
+
+    </div>
+
+    <div class="botonNuevo" (click)="nuevo()">
+        <i class="fas fa-plus-circle"></i>  
+    </div>
+
+
+</div>
+
+
+
+<div class="modal fade" id="misDatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Permisos</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <!-- <input type="text" class="form-control form-control-sm" id="nombre" [(ngModel)]="nombre" > -->
+            <select class="form-control form-control-sm". id="rol" [(ngModel)]="nombre" >
+                    <ng-container *ngFor="let item of listaRutas">  
+                        <option value="{{item.path}}">{{item.path}}</option>
+                    </ng-container>                    
+            </select>
+
+
+        </div>
+
+        <div class="form-group">
+            <label for="rol">Rol</label>
+            <select class="form-control form-control-sm". id="rol" [(ngModel)]="idrol" [disabled]="idSeleccionado !='' ">
+                    <ng-container *ngFor="let item of datosRoles">  
+                        <option value="{{item._id}}">{{item.nombre}}</option>
+                    </ng-container>                    
+            </select>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="Eliminar()" *ngIf="idSeleccionado != '' " >Eliminar</button>
+        <button type="button" class="btn btn-primary" (click)="Actualizar() " *ngIf="idSeleccionado != '' ">Actualizar</button>
+        <button type="button" class="btn btn-primary" (click)="Guardar()" *ngIf="idSeleccionado == '' ">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+

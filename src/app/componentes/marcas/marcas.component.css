@@ -1,0 +1,31 @@
+.botonNuevo {
+  background: #58aa8b;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  bottom: 15px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  align-items: center;  
+  align-content: center;
+  font-size: 23px;
+  right: 15px;
+  cursor: pointer;
+  
+}
+
+
+.imagenDefault{
+  width: 50px;
+  height: 50px;
+}
+
+.imagenItem{
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  height: 180px;
+  cursor: pointer;
+}
+

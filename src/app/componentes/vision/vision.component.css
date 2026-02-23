@@ -1,0 +1,78 @@
+.mision {
+    border: solid 1px black;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10%;
+    border-radius: 15px;
+    background: #226552bf;
+    box-shadow: 5px 5px 10px;
+    
+}
+
+.imagenMision {
+    border: solid 1px black;
+    width: 90%;
+    height: 315px;
+    margin-left: 5%;
+    margin-top: 10%;
+    border-radius: 15px;
+    background: #c9dfd6c9;
+    box-shadow: 5px 5px 10px;
+}
+
+.textoMision{
+    text-align: justify;
+    position: relative;
+    left: 1.5%;
+    padding-right: 3%;
+    margin: 2%;
+    font-size: 22px;
+    font-family: sans-serif;
+    color: white;
+    /* border: solid 1px red; */
+}
+
+@media (max-width:991px) {
+    .imagenMision {
+    border: solid 1px black;
+    width: 90%;
+    height: 540px;
+    content: url(/src/assets/imgVision2.png);
+    margin-left: 5%;
+    margin-top: 10%;
+    border-radius: 15px;
+    background: #c9dfd6c9;
+    box-shadow: 5px 5px 10px;
+}
+    
+}
+
+@media (max-width:767px) {
+    .imagenMision {
+    border: solid 1px black;
+    width: 90%;
+    height: 310px;
+    content: url(/src/assets/imgVision.png);
+    margin-left: 5%;
+    margin-top: 10%;
+    border-radius: 15px;
+    background: #c9dfd6c9;
+    box-shadow: 5px 5px 10px;
+}
+    
+}
+
+@media (max-width:424px) {
+    .imagenMision {
+    border: solid 1px black;
+    width: 90%;
+    height: 240px;
+    content: url(/src/assets/imgVision.png);
+    margin-left: 5%;
+    margin-top: 10%;
+    border-radius: 15px;
+    background: #c9dfd6c9;
+    box-shadow: 5px 5px 10px;
+}
+    
+}

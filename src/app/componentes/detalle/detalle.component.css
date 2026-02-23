@@ -1,0 +1,56 @@
+/* Imagen del producto */
+.imagenItem img { 
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Bloque de datos del producto */
+.datosItem {
+background-color: #217156;; /* gris claro Bootstrap */
+flex-direction: column;
+border-radius: 6px;
+padding: 20px;
+}
+
+.datosItem h3 {
+  text-decoration:underline;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.datosItem p {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.datosItem div {
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+/* Botón de compra */
+.datosItem .btn {
+  margin-top: 50px;
+  width: fit-content;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+/* Secciones inferiores */
+#descripcion, #datosTecnicos {
+  text-decoration:underline;
+  color: white;
+  width: 100%;  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #217156;; /* gris claro Bootstrap */
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+

@@ -1,0 +1,116 @@
+.textoRegistro {
+    margin-top: 1%;
+    border-bottom: solid 3px var();
+    padding-bottom: 1%;
+    background-color:#226552bf;
+    padding-left: 1%;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 15px;
+    
+}
+
+.datosRegistro {
+    border: solid 1px black;
+    width: 120%;
+    height: 300px;
+    margin-left: 10%;
+    margin-top: 10%;
+    border-radius: 15px;
+    background: #226552bf;
+    box-shadow: 5px 5px 10px;
+    
+    
+}
+
+
+.campos {
+    font-size: 20px;
+    color: white;
+    margin-left: 7%;
+    padding-top: 2%;
+    font-family: sans-serif;
+    border-radius: 15px;
+}
+
+.campo {
+    width: 98%;
+    padding-left: 1%;
+    color:black;
+    font-family: sans-serif;
+    border-radius: 15px;
+}
+
+
+
+.imagenRegistro {
+    border: solid 1px black;
+    width: 305px;
+    height: 305px;
+    margin-left: calc(50% - 80px);
+    margin-top: 10%;
+    border-radius: 15px;
+    background: #226552bf;
+    box-shadow: 5px 5px 10px;
+}
+
+.boton {
+    margin-top: 3%;
+    margin-left: 6%;
+    background: white;
+    color: #226552bf;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.5%;
+    box-shadow: 3px 3px 8px black;
+}
+
+.boton:hover {
+    
+    margin-top: 3%;
+    margin-left: 6%;
+    background: #226552bf;
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: ease-in-out 0.3s;
+}
+
+
+
+
+@media (max-width: 767px) {
+    .datosLogin {
+    border: solid 1px black;
+    width: 100%;
+    height: 205px;
+    margin-left: 0%;
+    margin-top: 10%;
+    border-radius: 15px;
+    background: #226552bf;
+    box-shadow: 5px 5px 10px;
+    
+}
+.imagenLogin {
+    border: solid 1px black;
+    width: 205px;
+    height: 205px;
+    margin-left: calc(50% - 102px);
+    margin-top: 10%;
+    border-radius: 15px;
+    background: #226552bf;
+    box-shadow: 5px 5px 10px;
+}
+    
+}
+
+@media (max-width:362px) {
+    .campo {
+    width: 70%;
+    padding-left: 2%;
+    color: white;
+    font-family: sans-serif;
+    border-radius: 15px;
+}
+    
+}

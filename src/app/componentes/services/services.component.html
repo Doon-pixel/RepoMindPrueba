@@ -1,0 +1,82 @@
+<app-menulateral></app-menulateral>
+<div id="ventanaFlotante">
+    <div class="titulo">
+        Servicios
+    </div>
+
+    <div class="areaTrabajo">
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+            
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Imagen</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of datos">
+                <tr  (click)="ListarId(item._id)">
+                <td>{{item.nombre}}</td>
+                <td>{{item.precio | currency}}  </td>
+                <td><img [src]="item.imagen" class="imagenServicio" alt=""></td>
+                </tr>
+            </ng-container>           
+        </tbody>
+        </table>
+
+
+    </div>
+
+    <div class="botonNuevo" (click)="nuevo()">
+        <i class="fas fa-plus-circle"></i>  
+    </div>
+
+
+</div>
+
+
+
+<div class="modal fade" id="misDatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Servicios</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control form-control-sm" id="nombre" [(ngModel)]="nombre" >
+        </div>
+
+        <div class="form-group">
+            <label for="precio">Precio</label>
+            <input type="text" class="form-control form-control-sm" id="precio" [(ngModel)]="precio" >
+        </div>
+
+        <div class="form-group">
+            <label for="imagen">Imagen</label>
+            <input type="text" class="form-control form-control-sm" id="imagen" [(ngModel)]="imagen" >
+        </div>
+
+        <div class="form-group">
+                <label for="descripcion">Descripcion</label>
+                <textarea class="form-control form-control-sm" id="descripcion" rows="3" [(ngModel)]="descripcion"></textarea>
+            </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="Eliminar()" *ngIf="idSeleccionado != '' " >Eliminar</button>
+        <button type="button" class="btn btn-primary" (click)="Actualizar() " *ngIf="idSeleccionado != '' ">Actualizar</button>
+        <button type="button" class="btn btn-primary" (click)="Guardar()" *ngIf="idSeleccionado == '' ">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+

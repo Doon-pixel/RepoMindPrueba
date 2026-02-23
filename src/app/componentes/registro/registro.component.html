@@ -1,0 +1,142 @@
+<app-header></app-header>
+
+<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="titulo">
+                    <h1>Formulario de registro</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="formaFormulario">
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="formulario">
+                                <div>
+
+                                </div>
+                                <div id="nombres">
+                                    <div>
+                                        <h3>Nombres</h3>
+                                    </div>
+
+
+                                    <input type="text" id="pnombre" maxlength="60" class="campoNombres"
+                                        placeholder="Nombre*" autocomplete="off">
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="col-12">
+                            <div id="apellidos">
+                                <div>
+                                        <h3>Apellidos</h3>
+                                    </div>
+                                
+                                <input type="text" id="papellido" maxlength="60" class="campoNombres"
+                                    placeholder="Apellidos*" autocomplete="off">
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div id="documentos">
+                    <div>
+                        <h3>Tipo y número de identificacón</h3>
+                    </div>
+                    
+                    <select name="" class="campo" id="tipodocumento">
+                        <option value=""></option>
+                        <option value="Cedula_de_ciudadania">Cedula de ciudadania</option>
+                        <option value="Cedula_de_extranjeria">Cedula de extranjeria</option>
+                        <option value="PEP">PEP</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                    </select><br>
+                    <input type="number" id="identificacion" min="0" class="campo"
+                        placeholder="Número de identificación*" autocomplete="off">
+                </div>
+
+                <div id="fechanacimiento">
+                    <div>
+                        <h3>Fecha de nacimiento</h3>
+                    </div>
+                    
+                    <input type="date" id="fecha" class="campo" max="2009-12-31" autocomplete="off">
+                </div>
+
+                <div id="lista">
+
+                    <div>
+                        <h3>Estado civil</h3>
+                    </div>
+
+                    <label class="ecoption" for="s">Soltero(a)</label>
+                    <input type="radio" name="ecivil" value="Soltero" id="s"><br>
+
+                    <label class="ecoption" for="c">Casado(a)</label>
+                    <input type="radio" name="ecivil" value="Casado" id="c"><br>
+
+                    <label class="ecoption" for="se">Separado(a)</label>
+                    <input type="radio" name="ecivil" value="Separado" id="se"><br>
+
+                    <label class="ecoption" for="ul">Unión libre</label>
+                    <input type="radio" name="ecivil" value="Unión libre" id="ul"><br>
+
+                    <label class="ecoption" for="v">Viudo(a)</label>
+                    <input type="radio" name="ecivil" value="Viudo/a" id="v"><br>
+                </div>
+
+                <div id="mail">
+                    <div>
+                        <h3>Correo</h3>
+                    </div>
+
+                    <input type="email" name="" id="correo" class="campo" placeholder="ejemplo@ejemplo.com*"
+                        autocomplete="off">
+                </div>
+
+
+                <div id="tele">
+                    <div>
+                        <h3>Teléfono</h3>
+                    </div>
+                    <input type="tel" id="telefono" min="0" class="campo" placeholder=" 3101234567*" autocomplete="off">
+                </div>
+
+
+
+                <div id="tArea">
+                    <textarea name="" rows="3" class="campota" id="habilidades" maxlength="550"
+                        placeholder="Cuentanos brevemente tu caso..."></textarea>
+                </div>
+
+
+
+                <div id="terminos">
+                    <input type="checkbox" id="terminos"><label for="terminos" class="terminos"> Acepto terminos y
+                        condiciones</label>
+                </div>
+            </div>
+         </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div id="enviar">
+                <button class="boton">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+<app-footer></app-footer>

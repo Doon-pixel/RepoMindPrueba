@@ -1,0 +1,111 @@
+<app-header></app-header>
+<div class="container">
+        <h1 class="tituloHome">Servicios de terapia</h1>
+    </div>
+
+    <div class="container descripcionServicios">
+        <div class="row">
+            <div class="col-12 col-md-7 col-lg-8 col-xl-9">
+                <p class="textoParrafo1">Sabemos que dar el primer paso no siempre es fácil, pero estamos aquí para caminar contigo. En nuestro centro, te ofrecemos un espacio de escucha activa, respeto y confidencialidad, diseñado para ayudarte a sanar, comprender tus emociones y fortalecer tus vínculos más importantes.
+                Creemos que cada proceso es único, por eso adaptamos nuestro enfoque a lo que tú y tus seres queridos necesitan hoy.No tienes que hacerlo solo. Estamos listos para acompañarte en la construcción de una vida más plena y equilibrada.            
+            </div>
+
+            <div class="col-12 col-md-5 col-lg-4 col-xl-3">
+                <img class="imagenParrafoServicios" src="/assets/imgServicios1.png" alt="imagenParrafoHome" >
+            </div>
+        </div>
+    </div>
+    <div class="container ">
+        <div class="row">
+            
+            <div class="col-12 col-md-12 col-lg-4 col-xl-4">
+                <div class="servicios">
+                    <div >
+                        <img class="imgServicios" src="./assets/imgServicios2.png" alt="imagenParrafoHome" >
+                    </div>
+                    <div >
+                        <p class="textoParrafo1">Terapia Individual: Un reencuentro contigo mismo para sanar heridas y potenciar tu crecimiento personal.</p>      
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 col-xl-4">
+                <div class="servicios">
+                    <div >
+                        <img class="imgServiciosPareja" src="./assets/imgServicios3.png" alt="imagenParrafoHome" >
+                    </div>
+                    <div >
+                        <p class="textoParrafo1">Terapia de Pareja: Herramientas de comunicación y empatía para reconstruir puentes y resolver conflictos.</p>      
+                    </div>
+
+                </div>
+                
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 col-xl-4">
+                <div class="servicios">
+                    <div >
+                        <img class="imgServicios" src="./assets/imgServicios4.png" alt="imagenParrafoHome" >
+                    </div>
+                    <div >
+                        <p class="textoParrafo1">Terapia Familiar: Un entorno seguro para mejorar la convivencia y fortalecer los lazos que los unen.</p>      
+                    </div>
+
+                </div>               
+            </div>  
+        </div>
+    </div>
+
+    <div class="container Boton">
+        <div class="row">
+            <div class="col-12 ">
+                <div class="calendar">
+                    <!-- Google Calendar Appointment Scheduling begin -->
+                        <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+                        <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+                        <script>
+                        (function() {
+                        var target = document.currentScript;
+                        window.addEventListener('load', function() {
+                            calendar.schedulingButton.load({
+                            url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3hQP_9HFFWKHwG_IMqaZ1g6dHz2rBnlhaYezbosFde6mrAd0Ww0ixQJayqBJ-ysWNoMPq5EIZ2?gv=true',
+                            color: '#598b7d',
+                            label: 'Agendar cita',
+                            target,
+                            });
+                        });
+                        })();
+                        
+                        </script>
+                    <!-- end Google Calendar Appointment Scheduling -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section class="container">
+        <div class="row">
+            <ng-container *ngFor="let item of datosServicios">
+                
+                <div class="itemservicios col-12 col-md-5">
+                    <div class="lblnombreServicios">{{item.nombre}}</div>
+                        <img [src]="item.imagen" class="miimagenservice">
+                    <div class="lblprecio">{{ item.precio | currency }}</div>
+                    <div class="lbldescripcion">{{item.descripcion}}</div>
+
+                    <a href="https://wa.me/+573113568545?text=estoy interesado en esta reserva {{ item.nombre }}">
+                        <button class="btn btn-primary">Reservar</button>
+                    </a>
+                </div>
+            </ng-container>
+        </div>
+    </section>
+
+    
+
+    
+    
+<app-footer></app-footer>
+
+

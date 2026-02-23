@@ -1,0 +1,14 @@
+div#activar {
+    width: 375px;
+    margin-left: calc(50% - 180px);
+    background: #598c7d;
+    padding: 1%;
+    margin-top: 2%;
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.titulo{
+    margin-top: 2%;
+}

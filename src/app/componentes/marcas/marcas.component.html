@@ -1,0 +1,79 @@
+<app-menulateral></app-menulateral>
+<div id="ventanaFlotante">
+    <div class="titulo">
+        Marcas
+    </div>
+
+    <div class="areaTrabajo">
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+
+            <th scope="col">Marca</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Destino</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of datos">
+                <tr  (click)="ListarId(item._id)">
+                  <td><img class="imagenDefault" [src]=" peticion.HostLocal + '/Marcas/'+item._id+'.png?v='+ random" onerror="this.src='assets/default.png';" ></td>
+                  <td>{{item.nombre}}</td>
+                  <td>{{item.destino}}</td>
+                </tr>
+            </ng-container>           
+        </tbody>
+        </table>
+
+
+    </div>
+
+    <div class="botonNuevo" (click)="nuevo()">
+        <i class="fas fa-plus-circle"></i>  
+    </div>
+
+
+</div>
+
+
+
+<div class="modal fade" id="misDatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Marcas</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        
+
+        <label for="imagenMarca" style="width: 100%;">
+          <img class="imagenItem" [src]=" peticion.HostLocal + '/Marcas/'+idSeleccionado+'.png?v='+random " onerror="this.src='assets/default.png';">
+          <input type="file" id="imagenMarca"  (change)="onFileSelected($event)" style="display: none;">
+        </label><br>
+        <!-- <button type="button" class="btn btn-primary" (click)="upload()" >Subir archivo</button>     OPCIONI PARA SUBIR EL ARCHIVO CON BOTON -->  
+        
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control form-control-sm" id="nombre" [(ngModel)]="nombre" >
+        </div>
+
+        <div class="form-group">
+            <label for="destino">Destino</label>
+            <input type="text" class="form-control form-control-sm" id="destino" [(ngModel)]="destino" >
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="Eliminar()" *ngIf="idSeleccionado != '' " >Eliminar</button>
+        <button type="button" class="btn btn-primary" (click)="Actualizar() " *ngIf="idSeleccionado != '' ">Actualizar</button>
+        <button type="button" class="btn btn-primary" (click)="Guardar()" *ngIf="idSeleccionado == '' ">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+

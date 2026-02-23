@@ -1,0 +1,109 @@
+<app-menulateral></app-menulateral>
+<div id="ventanaFlotante">
+    <div class="titulo">
+        usuarios
+    </div>
+
+    <div class="areaTrabajo">
+
+        <div class="btndescargarpdf">
+            <a [href]="peticion.HostLocal + '/api/usuarios/ListaUsuarios' ">
+                <i class="fas fa-file-pdf">Descargar Pdf</i>
+            </a>
+        </div>
+
+        <div class="btndescargarxls">
+            <a [href]="peticion.HostLocal + '/api/usuarios/descargarUsuariosXls' ">
+                <i class="fas fa-file-excel">Descargar Xls</i>
+            </a>
+        </div>
+
+
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+            
+            <th scope="col">Nombre</th>
+            <th scope="col">Email</th>
+            <th scope="col">Rol</th>
+            <th scope="col">Estado</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of datos">
+                <tr  (click)="ListarId(item._id)">
+                <td>{{item.nombre}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.rol}}</td>
+                <td>{{item.estado}}</td>
+                </tr>
+            </ng-container>           
+        </tbody>
+        </table>
+
+
+    </div>
+
+    <div class="botonNuevo" (click)="nuevo()">
+        <i class="fas fa-plus-circle"></i>  
+    </div>
+
+
+</div>
+
+
+
+<div class="modal fade" id="misDatos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Usuarios</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control form-control-sm" id="nombre" [(ngModel)]="nombre" >  
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control form-control-sm" id="email" [(ngModel)]="email" >  
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="form-control form-control-sm" id="password" [(ngModel)]="password" >  
+        </div>
+
+        <div class="form-group">
+            <label for="rol">Rol</label>
+            <select class="form-control form-control-sm". id="rol" [(ngModel)]="idrol" >
+                    <ng-container *ngFor="let item of datosRoles">  
+                        <option value="{{item._id}}">{{item.nombre}}</option>
+                    </ng-container>                    
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="estado">Estado</label>
+            <select class="form-control form-control-sm". id="estado" [(ngModel)]="estado" >
+                    <option value="activo">Activo</option>
+                    <option value="inactivo">Inactivo</option>                             
+            </select>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="Eliminar()" *ngIf="idSeleccionado != '' " >Eliminar</button>
+        <button type="button" class="btn btn-primary" (click)="Actualizar() " *ngIf="idSeleccionado != '' ">Actualizar</button>
+        <button type="button" class="btn btn-primary" (click)="Guardar()" *ngIf="idSeleccionado == '' ">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+

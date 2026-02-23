@@ -1,0 +1,40 @@
+<app-header></app-header>
+
+<div class="tituloProductos">
+        Nuestros Productos
+</div>
+
+<div class="textoProductos">
+        "Nuestros productos están diseñados para acompañarte en los momentos que más lo necesitas. Con un enfoque en el bienestar emocional, buscamos ofrecerte herramientas prácticas y accesibles que te brinden calma, motivación y apoyo psicológico. Cada detalle está pensado para ayudarte a construir espacios de confianza, autocuidado y esperanza en tu día a día."
+</div>
+
+
+<section id="products">
+
+        <div class="container-fluid">
+            <div class="row">
+                <ng-container *ngFor="let item of products">
+                    <div class="itemProducts col-12 col-md-3" *ngIf="item.estado == 'activo'" [routerLink]="'/detalle/'+item.nombre+'/'+item._id"  > 
+                        <div class="product-card">
+                        <div class="product-image">
+                            <img [src]=" peticion.HostLocal + '/Products/'+item._id+'.png'" onerror="this.src='assets/default.png';" alt="{{item.nombre}}">
+                        </div>
+
+                        <div class="product-info">
+                            <h2 class="product-name">{{item.nombre}}</h2>
+                            <p class="product-price">{{item.precio | currency}} COP</p>
+                            <p class="product-stock">Disponibles: {{item.cantidad | number}}</p>
+                        </div>
+                        </div>
+
+                    </div>
+                </ng-container>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+<app-footer>   </app-footer>

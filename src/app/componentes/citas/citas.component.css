@@ -1,0 +1,91 @@
+:root{
+    --color-fondo-parrafos:#c9dfd6c9;
+}
+
+.navbar{
+    background-color: var(--color-fondo-parrafos);
+}
+
+.iconContacto {
+    width: 45px;
+    height: 45px;
+}
+
+h3{
+    margin-top: 1%;
+    color: white;
+}
+
+.nav-item{
+    border-radius: 15px;
+}
+
+.nav-item:hover{
+    background-color: rgba(40, 128, 94, 0.582);
+    margin-right: 1%;
+    margin-left: 1%;
+    border-radius: 15px;
+    transition:ease-in-out  0.3s;
+}
+
+img.imagenParrafo1 {
+    width: 90%;
+    height: auto;
+    position: relative;
+    left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.contenedorHome{
+    background-color:#226552bf;
+    border-radius: 15px;
+    margin-bottom: 3%;
+    box-shadow: 5px 5px 5px;
+}
+
+.cAtencion {
+    display: flex;
+    margin-bottom: 3%;
+}
+
+.datosContacto {
+    margin-left: 3%;
+    margin-top: 1%;
+    font-family: sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+iframe {
+    height: 400px;
+    border-radius: 15px;
+    border: solid 2px #226552bf;
+}
+
+.mapaUbicacion {
+    border: solid 2px #226552bf;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    border-radius: 15px;
+}
+
+li {
+    color: white;
+    font-weight: 600;
+}
+
+p {
+    color: white;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+

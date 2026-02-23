@@ -1,0 +1,59 @@
+
+div#menu {
+    background: #58aa8b;
+    width: 200px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    border-radius: 22px 0px 0px 22px;
+}
+
+div#datosusuario img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-left: calc(50% - 75px);
+    margin-top: 25px;
+    margin-bottom: 9px;
+}
+
+.lblnombre {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+}
+
+
+.lblrol {
+    width: 100%;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+
+div#opciones {
+    padding-left: 11px;
+}
+
+.item {
+    color: white;
+    margin-bottom: 12px;
+    height: 31px;
+    border-radius: 16px;
+    padding-left: 8px;
+    padding-top: 2px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.item:hover {
+    padding-left: 19px;
+    background: #85b1a0b2;
+}
+

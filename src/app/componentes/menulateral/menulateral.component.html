@@ -1,0 +1,19 @@
+<div id="menu">
+  <div id="datosusuario">
+    <img src="assets/user.png">
+    <div class="lblnombre">{{nombre}}</div>
+    <div class="lblrol">{{rol}}</div>
+  </div>
+
+  <div id="opciones">
+    <div class="item" routerLink="/dashboard"><i class="fas fa-chart-line"></i> Dashboard</div>
+    <div class="item" routerLink="/roles" *ngIf="rol == 'Administrador'"><i class="fas fa-folder"></i> Roles</div>
+    <div class="item" routerLink="/permisos" *ngIf="rol == 'Administrador'"><i class="fas fa-folder"></i> Permisos</div>
+    <div class="item" routerLink="/usuarios" *ngIf="rol == 'Administrador'"><i class="fas fa-folder"></i> Usuarios</div>
+    <div class="item" routerLink="/products" *ngIf="rol == 'Administrador'"><i class="fas fa-folder"></i> Productos</div>
+    <div class="item" routerLink="/marcas" *ngIf="rol == 'Administrador'"><i class="fas fa-folder"></i> Marcas</div>
+    <div class="item" routerLink="/services" *ngIf="rol == 'Administrador'"><i class="fas fa-folder"></i> Servicios</div>
+    <div class="item" routerLink="/cambiarPassword"><i class="fas fa-folder"></i> Cambiar Password</div>
+    <div class="item" (click)="cerrarSesion()"><i class="fas fa-sign-out-alt"></i>Logout</div>
+  </div>
+</div>/
